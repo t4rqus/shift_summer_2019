@@ -33,15 +33,14 @@
 - [bugcrowd](https://www.bugcrowd.com/blog/how-to-find-idor-insecure-direct-object-reference-vulnerabilities-for-large-bounty-rewards/) - HOW-TO: FIND IDOR (INSECURE DIRECT OBJECT REFERENCE) VULNERABILITIES FOR LARGE BOUNTY REWARDS
 
 ## Ущерб
-	- Полечение логина и пароля любого пользователя
-	- Возможность обращяться к любым файлам в системе ( к которым есть доступ )	
+	- Получение данных из документов
+	- Возможность запуска файлов	
 ## Защита
 ### Основные меры
-Для файлов содержащие логин и пароль создать отдельную папку к которой будет запрещен доступ с внешних устройств, так же настроить роутинг на запреь к данной директории. 
-
+	- Настройка приватности файлов, настройка роутинга
 ### Превентивные меры
-подход Defense in Depth:
-- хранить хэш паролей + соль для того, что бы злоумышленник не мог получить доступ к паролю напрямую
+	подход Defense in Depth:
+	- подвергать файлы шифрованию содержащие важную информацию 
 
 ## Дополнительно
 	http://software-testing.ru/library/testing/security/2991-testing-for-idor-vulnerabilitie

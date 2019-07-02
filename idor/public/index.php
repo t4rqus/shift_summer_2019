@@ -4,15 +4,15 @@ function reg(){
   if(strpos($_GET['user'], ' ') || strpos($_GET['pass'], ' ') || strpos($_GET['user'], '  ') || strpos($_GET['pass'], ' ')){
     die();
   }
-	$file = fopen("users.txt", "a") or die("Unable to register!");
-  $string = file_get_contents("users.txt");
+	$file = fopen("users/users.txt", "a") or die("Unable to register!");
+  $string = file_get_contents("users/users.txt");
   $string = explode("\n", $string);
 
     if(!(in_array($_GET['user'], $string))) {
 		fwrite($file, $_GET['user']."\n");
 		fclose($file);
 
-		$file = fopen($_GET['user'].".txt", "w");
+		$file = fopen("users/".$_GET['user'].".txt", "w");
 		fwrite($file,$_GET['user'].' '.$_GET['pass']."\n");
 		fclose($file);
 		echo "You have been succesfully registered!";
@@ -26,13 +26,14 @@ function login(){
   if(strpos($_GET['user'], ' ') || strpos($_GET['pass'], ' ') || strpos($_GET['user'], '  ') || strpos($_GET['pass'], ' ')){
     die();
   }
-  $string = file_get_contents($_GET['user'].".txt");
+  $string = file_get_contents("users/".$_GET['user'].".txt");
   $string = explode(" ", $string);
-  var_dump($string[0]);
-  var_dump($_GET['user']);
-  var_dump(explode("\n", $string[1])[0]);
-  var_dump($_GET['pass']);
+
     if( ($string[0] === $_GET['user']) && (explode("\n", $string[1])[0] === $_GET['pass'])) {
+      var_dump($string[0]);
+      var_dump($_GET['user']);
+      var_dump(explode("\n", $string[1])[0]);
+      var_dump($_GET['pass']);
     	setcookie("cook", base64_encode($_GET['user']),time()+600);
     	header("Location: /");
     } else{
@@ -41,7 +42,7 @@ function login(){
 }
 
 
-  $string = file_get_contents("users.txt");
+  $string = file_get_contents("users/users.txt");
   $string = explode("\n", $string);
 
 if(isset($_COOKIE['cook']) && (in_array(base64_decode($_COOKIE['cook']), $string))){
@@ -85,7 +86,7 @@ else{
 <br>
 <br>
 Our new users:<br>
-<textarea name="textarea" rows="5" cols="30" disabled>'.file_get_contents("users.txt").'</textarea>
+<textarea name="textarea" rows="5" cols="30" disabled>'.file_get_contents("users/users.txt").'</textarea>
 </body>
 </html>';
 

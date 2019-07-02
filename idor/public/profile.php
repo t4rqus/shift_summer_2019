@@ -7,20 +7,20 @@ if (isset($_GET['type'],$_GET['old'],$_GET['user'],$_GET['pass']) && $_GET['type
 	  if(strpos($_GET['user'], ' ') || strpos($_GET['pass'], ' ') || strpos($_GET['user'], '  ') || strpos($_GET['pass'], ' ')){
     die();
   }
-	$file = fopen("users.txt", "a") or die("Unable to register!");
-  $string = file_get_contents("users.txt");
+	$file = fopen("users/users.txt", "a") or die("Unable to register!");
+  $string = file_get_contents("users/users.txt");
   $string = explode("\n", $string);
 
     if((in_array($_GET['user'], $string))) {
     	die();
 }
-		rename($_GET['old'].".txt", $_GET['user'].".txt");
-		$file = fopen($_GET['user'].".txt", "w");
+		rename("users/".$_GET['old'].".txt", "users/".$_GET['user'].".txt");
+		$file = fopen("users/".$_GET['user'].".txt", "w");
 		fwrite($file, $_GET['user'].' '.$_GET['pass']."\n");
 		fclose($file);
-	    $str=file_get_contents('users.txt');
+	    $str=file_get_contents('users/users.txt');
 	    $str=str_replace($_GET['old'], $_GET['user'],$str);
-	    file_put_contents('users.txt', $str);
+	    file_put_contents('users/users.txt', $str);
 	    setcookie("cook", base64_encode($_GET['user']));
 	echo "
 	<!DOCTYPE html>

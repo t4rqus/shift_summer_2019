@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <FilesMatch ".(txt)$">
 
   Order Allow,Deny
@@ -5,3 +6,9 @@
   Deny from all
   
 </FilesMatch>
+=======
+<FilesMatch ~ "\.(txt)$">
+  Order allow,deny
+  Deny from all
+</FilesMatch>
+>>>>>>> 5e0325539be11116fb6a0f83c6b40ee0fe701aab

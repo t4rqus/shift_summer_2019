@@ -1,3 +1,0 @@
-deny from all
-order allow,deny
-Options All -Indexes

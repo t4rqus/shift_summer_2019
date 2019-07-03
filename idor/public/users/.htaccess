@@ -1,1 +1,7 @@
-deny from all
+<FilesMatch ".(txt)$">
+
+  Order Allow,Deny
+
+  Deny from all
+  
+</FilesMatch>

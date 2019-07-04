@@ -1,9 +1,0 @@
-Nickname_3
-Nickname_4
-<<<<<<< HEAD
-new_user
-sdfsdfsdfsdf
-qqqqqqq
-=======
-dawdawd
->>>>>>> 5e0325539be11116fb6a0f83c6b40ee0fe701aab

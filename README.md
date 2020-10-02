@@ -250,3 +250,5 @@
 
 Удалить все промежуточные образы (создаются во время билда):
 - ```docker rmi `docker images -f "dangling=true" -q` ```
+
+just test
